@@ -21,9 +21,13 @@ Route::post('admin/city/store', 'CitiesController@store');
 Route::get('admin/city/{id}/delete', 'CitiesController@delete');
 Route::get('admin/city/{id}/edit', ['as' => 'city.edit', 'uses' => 'CitiesController@edit']);
 Route::post('admin/city/{id}/update', ['as' => 'city.update', 'uses' => 'CitiesController@update']);
+
 Route::post('admin/district/edit', ['as' => 'district.edit', 'uses' => 'CitiesController@districtEdit']);
 Route::get('admin/district/{id}/delete', ['as' => 'district.delete', 'uses' => 'CitiesController@districtDelete']);
 
+
+Route::get('admin/types', 'TypesController@index');
+Route::get('admin/types/create', 'TypesController@create');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

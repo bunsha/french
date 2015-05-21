@@ -35,14 +35,14 @@
 							</a>
 							<ul class="submenu">
 								<li class="types_menu_create">
-									<a href="/admin/companies/create">
+									<a href="/admin/types/create">
 										<i class="icon-double-angle-right"></i>
 										{{ Lang::get('navigation.addNew') }}
 									</a>
 								</li>
 
 								<li class="companies_menu_all">
-									<a href="/admin/companies">
+									<a href="/admin/types">
 										<i class="icon-double-angle-right"></i>
 										{{ Lang::get('navigation.showAll') }}
 									</a>
