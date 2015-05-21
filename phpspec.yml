@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: French
+        psr4_prefix: French
+        src_path: app
