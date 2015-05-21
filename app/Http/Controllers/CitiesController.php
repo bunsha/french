@@ -64,7 +64,7 @@ class CitiesController extends Controller {
         $city = City::find($id);
         $name = $city->name;
         City::destroy($id);
-        return redirect('/admin/city')->with('message', Lang::get('misc.city.deleted', ['name' => $name]));
+        return redirect('/admin/city')->with('message', Lang::get('misc.city.deleted'));
     }
 
 

@@ -10,8 +10,11 @@ class Type extends Model{
 
     public $timestamps = false;
 
+
+    /*
     public function objects()
     {
         return $this->hasMany('French\Object', 'type');
     }
+    */
 }

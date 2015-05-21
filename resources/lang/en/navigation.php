@@ -2,7 +2,7 @@
     return [
         'cities' => 'Cities',
         'types' => 'Types',
-
+        'objects' => 'Objects',
 
 
 

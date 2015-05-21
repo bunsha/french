@@ -50,25 +50,26 @@
 							</ul>
 						</li>
 
-						<li class="menu_menu">
+						<li class="objects_menu">
 							<a href="#" class="dropdown-toggle">
-								<i class="icon-list"></i>
-								<span class="menu-text"> Menu </span>
+								<i class="icon-globe"></i>
+								<span class="menu-text"> {{ Lang::get('navigation.objects') }} </span>
 							</a>
 							<ul class="submenu">
-								<li class="menu_menu_create">
-									<a href="/admin/menu/create">
+								<li class="objects_menu_create">
+									<a href="/admin/types/create">
 										<i class="icon-double-angle-right"></i>
-										Add New
+										{{ Lang::get('navigation.addNew') }}
 									</a>
 								</li>
 
-								<li class="menu_menu_all">
-									<a href="/admin/menu">
+								<li class="objects_menu_all">
+									<a href="/admin/types">
 										<i class="icon-double-angle-right"></i>
-										Show All
+										{{ Lang::get('navigation.showAll') }}
 									</a>
 								</li>
 							</ul>
 						</li>
+
 					</ul><!-- /.nav-list -->

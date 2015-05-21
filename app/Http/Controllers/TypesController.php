@@ -19,30 +19,28 @@ class TypesController extends Controller {
 
     public function create()
     {
-        return view('admin.cities.create');
+        return view('admin.types.create');
     }
 
     public function store(CreateCityRequest $request)
 	{
         try {
             Type::create([
-                'name' => $request['name'],
-                'shape' => $request['shape'],
+                'name' => $request['name']
             ]);
         }
         catch(Exception $ex)
         {
             Log::error($ex->getMessage());
-            return redirect('/admin/city/')->with('message', Lang::get('misc.city.notCreated', ['name' => $request['name']]));
+            return redirect('/admin/types/')->with('message', Lang::get('misc.type.notCreated', ['name' => $request['name']]));
         }
-        return redirect('/admin/city/')->with('message', Lang::get('misc.city.created', ['name' => $request['name']]));
+        return redirect('/admin/types/')->with('message', Lang::get('misc.type.created', ['name' => $request['name']]));
 	}
 
     public function edit($id)
     {
         $item = Type::findOrFail($id);
-        $disctrict = $item->districts;
-        return view('admin.cities.edit')->with(['item' => $item, 'title' => 'Edit "'.$item->name.'" city', 'brcr' => 'Edit city', 'disctrict' => $disctrict]);
+        return view('admin.types.edit')->with(['item' => $item, 'title' => 'Edit "'.$item->name.'" type', 'brcr' => 'Edit type']);
     }
 
     public function update(CreateCityRequest $request)
@@ -53,17 +51,15 @@ class TypesController extends Controller {
             if(strlen($request['shape']) > 10)
                 $city->name = $request['shape'];
             $city->save();
-            return redirect('/admin/city/'.$request['id'].'/edit')->with('message', Lang::get('misc.city.saved', ['name' => $request['name']]));
+            return redirect('/admin/types/'.$request['id'].'/edit')->with('message', Lang::get('misc.type.saved', ['name' => $request['name']]));
         }else {
             return false;
         }
 
     }
     public function delete($id){
-        $city = City::find($id);
-        $name = $city->name;
-        City::destroy($id);
-        return redirect('/admin/city')->with('message', Lang::get('misc.city.deleted', ['name' => $name]));
+        Type::destroy($id);
+        return redirect('/admin/types/')->with('message', Lang::get('misc.type.deleted'));
     }
 
 
