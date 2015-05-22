@@ -37,13 +37,13 @@ Route::get('admin/types/{id}/edit', ['as' => 'type.edit', 'uses' => 'TypesContro
 Route::post('admin/city/{id}/update', ['as' => 'type.update', 'uses' => 'TypesController@update']);
 
 /*********** MAPS *************/
-Route::get('admin/city/maps/{string}', 'MapsController@getGeocode');
-Route::get('maps/{string}', 'MapsController@store');
+Route::post('admin/city/maps/{string}', 'MapsController@getGeocode');
+Route::post('admin/maps/load', 'MapsController@store');
 
 /*********** OBJETS *************/
 Route::get('admin/objects/create/', 'ObjectsController@create');
-Route::post('admin/objects/store/', 'ObjectsController@post');
-
+Route::post('admin/objects/store/', 'ObjectsController@store');
+Route::get('admin/objects/show/{id}', 'ObjectsController@show');
 
 
 Route::controllers([

@@ -5,6 +5,7 @@ use French\District;
 use French\Map;
 use French\Http\Requests;
 use French\Http\Requests\CreateCityRequest;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\View;
 use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
@@ -36,8 +37,8 @@ class MapsController extends Controller {
         return $json;
     }
 
-    public function store($string){
-        $geoData = $this->getGeocode($string);
+    public function store(Request $string){
+        $geoData = $this->getGeocode($string['string']);
         $district = null;
         $city = null;
         $districtName = null;
@@ -71,19 +72,21 @@ class MapsController extends Controller {
                 }else{
                     $district = District::where('name', '=', $districtName)->first();
                 }
-                Map::create([
+                $map = Map::create([
                     'name' => 'New Name',
-                    'lat' => $geoData['results'][0]['geometry']['location']['lng'],
+                    'lat' => $geoData['results'][0]['geometry']['location']['lat'],
                     'lng' => $geoData['results'][0]['geometry']['location']['lng'],
                     'address' => $geoData['results'][0]['formatted_address'],
                     'descr' => 'New Descr',
                     'city' => $city->id,
                     'district' => $district->id,
+                    'object_id' => $string['object'],
                 ]);
+                return response()->json(['status' => 'Location founded', 'id' => $map->id, 'city' => $map->city, 'district' => $map->district]);
             }
 
         }else{
-            return http_response_code(104);
+            return response()->json(['status' => 'ERROR: Unable to find location']);
         }
 
 

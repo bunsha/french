@@ -4,8 +4,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Object extends Model{
 
-	protected $table = 'districts';
-	protected $fillable = ['content', 'title', 'status', 'active', 'author', 'type', 'maps_id', 'maps_city', 'maps_district', 'slug', 'parent_id'];
+	protected $table = 'objects';
+	protected $fillable = ['title', 'content', 'status', 'active', 'author', 'type', 'maps_id', 'maps_city', 'maps_district', 'slug', 'parent_id'];
 
 
     public function options()
@@ -15,6 +15,6 @@ class Object extends Model{
 
     public function map()
     {
-        return $this->hasOne('French\Map');
+        return $this->hasOne('French\Map', 'object_id');
     }
 }

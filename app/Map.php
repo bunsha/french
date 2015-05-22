@@ -29,4 +29,9 @@ class Map extends Model{
     {
         return $this->belongsTo('French\District', 'district');
     }
+
+    public function object()
+    {
+        return $this->belongsTo('French\Object', 'object_id');
+    }
 }
