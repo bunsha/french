@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2f36e05dd22679dc8ff21b2ba49e0748",
+    "hash": "e409230dc012dbf46db63077241939b0",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -62,16 +62,16 @@
         },
         {
             "name": "caouecs/laravel4-lang",
-            "version": "2.0.4",
+            "version": "2.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/caouecs/Laravel-lang.git",
-                "reference": "71983fd02809b865e441cb4eaec562045cb1fe5d"
+                "reference": "5964d1d58a4f90b4baa97d29820ac1f83803c166"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/71983fd02809b865e441cb4eaec562045cb1fe5d",
-                "reference": "71983fd02809b865e441cb4eaec562045cb1fe5d",
+                "url": "https://api.github.com/repos/caouecs/Laravel-lang/zipball/5964d1d58a4f90b4baa97d29820ac1f83803c166",
+                "reference": "5964d1d58a4f90b4baa97d29820ac1f83803c166",
                 "shasum": ""
             },
             "suggest": {
@@ -95,7 +95,7 @@
                 "laravel",
                 "lpm"
             ],
-            "time": "2015-05-19 18:26:50"
+            "time": "2015-05-21 21:52:01"
         },
         {
             "name": "classpreloader/classpreloader",
