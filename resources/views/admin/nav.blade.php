@@ -8,7 +8,7 @@
 
 						<li class="pages_menu">
 							<a href="#" class="dropdown-toggle">
-								<i class="icon-edit"></i>
+								<i class="icon-globe"></i>
 								<span class="menu-text"> {{ Lang::get('navigation.cities') }} </span>
 							</a>
 							<ul class="submenu">
@@ -30,7 +30,7 @@
 
 						<li class="types_menu">
 							<a href="#" class="dropdown-toggle">
-								<i class="icon-globe"></i>
+								<i class="icon-random"></i>
 								<span class="menu-text"> {{ Lang::get('navigation.types') }} </span>
 							</a>
 							<ul class="submenu">
@@ -41,7 +41,7 @@
 									</a>
 								</li>
 
-								<li class="companies_menu_all">
+								<li class="types_menu_all">
 									<a href="/admin/types">
 										<i class="icon-double-angle-right"></i>
 										{{ Lang::get('navigation.showAll') }}
@@ -52,7 +52,7 @@
 
 						<li class="objects_menu">
 							<a href="#" class="dropdown-toggle">
-								<i class="icon-globe"></i>
+								<i class="icon-pencil"></i>
 								<span class="menu-text"> {{ Lang::get('navigation.objects') }} </span>
 							</a>
 							<ul class="submenu">

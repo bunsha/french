@@ -32,8 +32,8 @@
 </div>
 		<script type="text/javascript">
 			jQuery(function(){
-			    $('.pages_menu').addClass('active open');
-			    $('.pages_menu_create').addClass('active');
+			    $('.types_menu').addClass('active open');
+			    $('.types_menu_create').addClass('active');
 			});
 	    </script>
 @endsection

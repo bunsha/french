@@ -36,8 +36,9 @@ Route::get('admin/types/{id}/delete', 'TypesController@delete');
 Route::get('admin/types/{id}/edit', ['as' => 'type.edit', 'uses' => 'TypesController@edit']);
 Route::post('admin/city/{id}/update', ['as' => 'type.update', 'uses' => 'TypesController@update']);
 
-
-
+/*********** MAPS *************/
+Route::get('admin/city/maps/{string}', 'MapsController@getGeocode');
+Route::get('maps/{string}', 'MapsController@store');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

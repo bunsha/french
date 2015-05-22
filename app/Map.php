@@ -17,6 +17,7 @@ class Map extends Model{
 	 * @var array
 	 */
 	protected $fillable = ['name', 'lat', 'lng', 'address', 'description', 'city', 'district'];
+
     public $timestamps = false;
 
     public function city()

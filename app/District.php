@@ -16,7 +16,7 @@ class District extends Model{
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'shape'];
+	protected $fillable = ['name', 'shape', 'city'];
 
     public $timestamps = false;
 
