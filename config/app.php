@@ -147,6 +147,7 @@ return [
         'Laracasts\Flash\FlashServiceProvider',
         'Illuminate\Html\HtmlServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
+        'Barryvdh\Elfinder\ElfinderServiceProvider',
 	],
 
 	/*

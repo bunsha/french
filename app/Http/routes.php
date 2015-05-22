@@ -40,6 +40,12 @@ Route::post('admin/city/{id}/update', ['as' => 'type.update', 'uses' => 'TypesCo
 Route::get('admin/city/maps/{string}', 'MapsController@getGeocode');
 Route::get('maps/{string}', 'MapsController@store');
 
+/*********** OBJETS *************/
+Route::get('admin/objects/create/', 'ObjectsController@create');
+Route::post('admin/objects/store/', 'ObjectsController@post');
+
+
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
