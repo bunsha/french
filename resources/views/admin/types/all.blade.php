@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{$item->id}}</td>
                         <td>{{$item->name}}</td>
-                        <td>//$item->objects->count()</td>
+                        <td>{{$item->objects->count()}}</td>
                         <td>
                             <div class="visible-md visible-lg visible-sm visible-xs action-buttons">
                                 <a class="green" href="/admin/types/{{$item->id}}/edit">

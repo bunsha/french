@@ -11,35 +11,30 @@
     <script>
         var map;
         var markers = [];
+        var infowindow;
 
-        locations = [
+
+
+        var locations = [
             @foreach($maps as $map)
                 ['{{$item->title}}', {{$map->lat}}, {{$map->lng}}],
             @endforeach
         ];
 
-        function setMap(){
-            var theMap = new google.maps.Map(document.getElementById('map'), {
-                zoom: 16,
-                center: new google.maps.LatLng(32.0211992, 34.7425980),
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            return theMap;
-        }
 
         function initialize() {
-            var map = new google.maps.Map(document.getElementById('map'), {
+            map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 16,
                 center: new google.maps.LatLng(32.0211992, 34.7425980),
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
-            var infowindow = new google.maps.InfoWindow();
+            infowindow = new google.maps.InfoWindow();
             var marker, i;
 
             addMarker(locations, map);
-
-
         }
+
+
         function addMarker(locations, map) {
             for (i = 0; i < locations.length; i++) {
                 var marker = new google.maps.Marker({
@@ -54,6 +49,11 @@
                     }
                 })(marker, i));
             }
+        }
+
+        function changeLocation(){
+            var locations = locations;
+            initialize();
         }
 
         function clearMarkers() {
@@ -74,23 +74,14 @@
         }
         window.onload = initialize;
 
-
-       jQuery(window).resize(function(){
-           clearMarkers();
-            locations = [
-                @foreach($maps as $map)
-                    ['{{$item->title}}', {{$map->lat}}, {{$map->lng}}],
-                @endforeach
-            ];
-           window.setTimeout(addMarker(locations, setMap()),3000);
-            //alert(123);
-       }) ;
     </script>
-sdfgsdfg
-    <div id="map" style="height:300px;width:100%;"></div>
-    <div id="map33" style="height:300px;width:100%;">qwdqwd</div>
-fdgsdfg
 
+    <div id="map" style="height:300px;width:100%;"></div>
+
+
+    <a href="#" onclick="clearMarkers()">hide all markers</a>
+    <br>
+    <a href="#" onclick="addMarker(locations, map)">show all markers</a>
 
 
 @endsection

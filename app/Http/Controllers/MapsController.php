@@ -82,7 +82,15 @@ class MapsController extends Controller {
                     'district' => $district->id,
                     'object_id' => $string['object'],
                 ]);
-                return response()->json(['status' => 'Location founded', 'id' => $map->id, 'city' => $map->city, 'district' => $map->district]);
+                return response()->json([
+                        'status' => 'Location founded',
+                        'id' => $map->id,
+                        'city' => $map->city,
+                        'district' => $map->district,
+                        'lat' => $geoData['results'][0]['geometry']['location']['lat'],
+                        'lng' => $geoData['results'][0]['geometry']['location']['lng'],
+                        'data' => $geoData
+                ]);
             }
 
         }else{

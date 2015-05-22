@@ -57,14 +57,14 @@
 							</a>
 							<ul class="submenu">
 								<li class="objects_menu_create">
-									<a href="/admin/types/create">
+									<a href="/admin/objects/create">
 										<i class="icon-double-angle-right"></i>
 										{{ Lang::get('navigation.addNew') }}
 									</a>
 								</li>
 
 								<li class="objects_menu_all">
-									<a href="/admin/types">
+									<a href="/admin/objects">
 										<i class="icon-double-angle-right"></i>
 										{{ Lang::get('navigation.showAll') }}
 									</a>

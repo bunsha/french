@@ -38,15 +38,20 @@ class ObjectsController extends Controller {
             'active' => $active,
             'author' => $request['author'],
             'type' => $request['type'],
-            //'maps_id' => $request['maps_id'],
-            //'maps_city' => $request['maps_city'],
-            //'maps_district' => $request['maps_district'],
             'slug' => $request['slug'],
             'parent_id' => $request['parent_id'],
         ]);
         $map = Map::find($request['maps_id']);
         $map->object_id = $object->id;
         $map->save();
+
+        foreach($request['options'] as $option){
+            DB::table('objects_has_options')->insert(
+                ['objects_id' => $object->id, 'options_id' => 2, 'meta_key' => $option['key'] ,'meta_value' => $option['value']]
+            );
+        }
+
+
         return redirect('/admin/objects/')->with('message', Lang::get('misc.objects.created', ['name' => $request['name']]));
 	}
     public function show($id)
